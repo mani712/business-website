@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>
+    PPMANI | Freelance Web Developer — Fast, Modern & Professional
+  </title>
+  <meta name="description"
+    content="PPMANI – Freelance website developer. Get your business online in 48 hours. Professional websites, landing pages, SaaS dashboards, redesign & performance optimization." />
+  <meta name="keywords"
+    content="website developer near me, freelance web developer India, business website, landing pages, SaaS dashboard UI, performance optimization" />
+  <meta name="author" content="PPMANI" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Custom config to extend Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "system-ui", "sans-serif"],
+          },
+          animation: {
+            "fade-up": "fadeUp 0.6s ease-out",
+            float: "float 4s ease-in-out infinite",
+            "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+          },
+          keyframes: {
+            fadeUp: {
+              "0%": { opacity: "0", transform: "translateY(20px)" },
+              "100%": { opacity: "1", transform: "translateY(0)" },
+            },
+            float: {
+              "0%, 100%": { transform: "translateY(0px)" },
+              "50%": { transform: "translateY(-10px)" },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap");
+
+    * {
+      scroll-behavior: smooth;
+    }
+
+    .hover-scale {
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .hover-scale:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #0f2b3d 0%, #1e5f7a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-bg {
+      background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased">
+  <!-- Sticky Navbar -->
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+    <div class="container mx-auto px-4 md:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="text-2xl md:text-3xl font-extrabold">
+          <div class="flex items-center gap-2">
+            <img src="/logo.png" class="h-8 md:h-10 w-auto" />
+            <span class="gradient-text">
+              <span class="md:hidden lg:inline">WEB DEVELOPER PPMANI</span>
+              <span class="hidden md:inline lg:hidden">PPMANI</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8">
+          <a href="#" data-page="home"
+            class="nav-link text-gray-700 hover:text-teal-600 font-semibold transition-colors duration-200">Home</a>
+          <a href="#" data-page="services"
+            class="nav-link text-gray-700 hover:text-teal-600 font-semibold transition-colors duration-200">Services</a>
+          <a href="#" data-page="about"
+            class="nav-link text-gray-700 hover:text-teal-600 font-semibold transition-colors duration-200">About</a>
+          <a href="#" data-page="contact"
+            class="nav-link text-gray-700 hover:text-teal-600 font-semibold transition-colors duration-200">Contact</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuToggle" class="md:hidden text-2xl text-gray-700 focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden md:hidden pb-4 flex flex-col space-y-3">
+        <a href="#" data-page="home"
+          class="nav-link-mobile text-gray-700 hover:text-teal-600 font-semibold py-2 transition">Home</a>
+        <a href="#" data-page="services"
+          class="nav-link-mobile text-gray-700 hover:text-teal-600 font-semibold py-2 transition">Services</a>
+        <a href="#" data-page="about"
+          class="nav-link-mobile text-gray-700 hover:text-teal-600 font-semibold py-2 transition">About</a>
+        <a href="#" data-page="contact"
+          class="nav-link-mobile text-gray-700 hover:text-teal-600 font-semibold py-2 transition">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main id="app" class="min-h-screen"></main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-lg font-semibold text-white mb-2">PPMANI</p>
+      <p>
+        © 2025 PPMANI — Freelance Web Developer. Fast, modern &
+        conversion-focused.
+      </p>
+      <p class="text-sm mt-2">📍 India | Worldwide clients</p>
+      <div class="flex justify-center space-x-6 mt-6">
+        <a href="https://www.facebook.com/61578386049057/about/?_rdr" target="_blank"
+          class="text-gray-400 hover:text-white text-2xl transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/channel/UCY2r47u-rhEiLz3Imnw7MAg" target="_blank"
+          class="text-gray-400 hover:text-white text-2xl transition"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919844730773" target="_blank"
+          class="text-gray-400 hover:text-white text-2xl transition"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons: WhatsApp + Call -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col space-y-3">
+    <a href="https://wa.me/919844730773?text=Hello%20PPMANI%2C%20I%20need%20a%20website%20consultation" target="_blank"
+      class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 duration-200">
+      <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+    <a href="tel:+919876543210"
+      class="bg-teal-600 hover:bg-teal-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 duration-200">
+      <i class="fas fa-phone-alt text-xl"></i>
+    </a>
+  </div>
+
+  <script>
+    // Image-based content with attractive pictures (Unsplash placeholder but high quality)
+    const YOUR_FORM_ID = '1FAIpQLSdJ9N0zRKDRlA8BqGC3T7eD4aZ0TXH3Aw1KLrzqYEkKoElByA'
+    const pages = {
+      home: `
+      <!-- Hero Section with Image -->
+      <div class="hero-bg">
+        <div class="container mx-auto px-4 py-16 md:py-24 lg:py-32">
+          <div class="flex flex-col lg:flex-row items-center gap-12">
+            <div class="flex-1 text-center lg:text-left animate-[fadeUp_0.6s_ease-out]">
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                Get Your Business Online in <span class="gradient-text">48 Hours</span>
+              </h1>
+              <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+                Professional websites for local businesses and startups — built with speed, modern UI, and conversion focus.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <button data-nav-contact class="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-3 rounded-full transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                  Get Free Consultation
+                </button>
+              </div>
+            </div>
+            <div class="flex-1 animate-[float_4s_ease-in-out_infinite]">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=450&fit=crop" alt="Web Development" class="rounded-2xl shadow-2xl w-full max-w-md mx-auto lg:max-w-full">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Section -->
+      <div class="container mx-auto px-4 py-20">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What I Deliver</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Comprehensive web solutions tailored to your business needs</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-white rounded-2xl p-6 text-center shadow-lg hover-scale transition-all border border-gray-100">
+            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-code text-teal-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Business Websites</h3>
+            <p class="text-gray-600">Custom responsive design, CMS, fast load & SEO ready</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 text-center shadow-lg hover-scale transition-all border border-gray-100">
+            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-rocket text-teal-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Landing Pages</h3>
+            <p class="text-gray-600">High-converting, pixel perfect, lead generation optimized</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 text-center shadow-lg hover-scale transition-all border border-gray-100">
+            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-chart-line text-teal-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">SaaS Dashboard UI</h3>
+            <p class="text-gray-600">Next.js, realtime charts, clean UX & interactivity</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 text-center shadow-lg hover-scale transition-all border border-gray-100">
+            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-palette text-teal-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Redesign & Optimize</h3>
+            <p class="text-gray-600">Modern refresh + performance tuning (Lighthouse 90+)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Preview with Images -->
+      <div class="bg-gray-50 py-20">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Portfolio Preview</h2>
+          <p class="text-center text-gray-600 mb-12">Recent projects that showcase my expertise</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover-scale transition-all">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" alt="Business Website" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+              <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">LocalEats Bistro</h4>
+                <p class="text-gray-600">Restaurant website + online ordering system</p>
+              </div>
+            </div>
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover-scale transition-all">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="SaaS Dashboard" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+              <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">FinDash SaaS</h4>
+                <p class="text-gray-600">Analytics dashboard (Next.js + Tailwind)</p>
+              </div>
+            </div>
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover-scale transition-all">
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=250&fit=crop" alt="Landing Page" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+              <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Startup Launch</h4>
+                <p class="text-gray-600">Landing page → 300% signup growth</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="container mx-auto px-4 py-20">
+        <div class="max-w-3xl mx-auto bg-gradient-to-r from-teal-50 to-blue-50 rounded-3xl p-8 md:p-12 text-center shadow-xl">
+          <i class="fas fa-quote-left text-teal-400 text-4xl mb-4"></i>
+          <p class="text-xl md:text-2xl text-gray-700 italic mb-6">"PPMANI delivered our business site within 2 days — clean, fast and exactly what we needed. Highly recommend for anyone looking for quality work!"</p>
+          <h4 class="text-lg font-bold text-gray-800">— Riya Mehta, Founder of BloomSpace</h4>
+          <div class="flex justify-center mt-4">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strong CTA Banner -->
+      <div class="bg-gradient-to-r from-teal-700 to-blue-800 py-16">
+        <div class="container mx-auto px-4 text-center">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to scale your brand online?</h3>
+          <p class="text-xl text-white/90 mb-8">Get a custom website that drives leads & sales.</p>
+          <button data-nav-contact class="bg-white text-teal-700 font-semibold px-10 py-4 rounded-full hover:shadow-xl transition-all transform hover:-translate-y-1 text-lg">
+            Request Free Consultation →
+          </button>
+        </div>
+      </div>
+    `,
+
+      services: `
+      <div class="container mx-auto px-4 py-20">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text">My Professional Services</h2>
+        <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">End-to-end web development solutions for modern businesses</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale transition-all border border-gray-100">
+            <div class="w-20 h-20 bg-teal-100 rounded-2xl flex items-center justify-center mb-6">
+              <i class="fas fa-laptop-code text-teal-600 text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Business Website Development</h3>
+            <p class="text-gray-600">Fully responsive, SEO-friendly, CMS integration (WordPress / custom code). Perfect for local businesses.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale transition-all border border-gray-100">
+            <div class="w-20 h-20 bg-teal-100 rounded-2xl flex items-center justify-center mb-6">
+              <i class="fas fa-file-alt text-teal-600 text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Landing Pages</h3>
+            <p class="text-gray-600">Ultra fast, lead optimized, A/B test ready — perfect for campaigns and product launches.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale transition-all border border-gray-100">
+            <div class="w-20 h-20 bg-teal-100 rounded-2xl flex items-center justify-center mb-6">
+              <i class="fas fa-chart-pie text-teal-600 text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">SaaS Dashboard UI (Next.js)</h3>
+            <p class="text-gray-600">Modern dashboards, realtime data, dark mode, interactive components with performance in mind.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale transition-all border border-gray-100">
+            <div class="w-20 h-20 bg-teal-100 rounded-2xl flex items-center justify-center mb-6">
+              <i class="fas fa-sync-alt text-teal-600 text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Website Redesign</h3>
+            <p class="text-gray-600">Refresh old designs, improve UX, mobile responsiveness, and conversion rates.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale transition-all border border-gray-100">
+            <div class="w-20 h-20 bg-teal-100 rounded-2xl flex items-center justify-center mb-6">
+              <i class="fas fa-tachometer-alt text-teal-600 text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Performance Optimization</h3>
+            <p class="text-gray-600">Lighthouse 90+, Core Web Vitals, faster load times, and better SEO rankings.</p>
+          </div>
+          <div class="bg-gradient-to-br from-teal-500 to-teal-700 rounded-2xl p-8 shadow-lg hover-scale transition-all text-white">
+            <i class="fas fa-rocket text-4xl mb-4"></i>
+            <h3 class="text-2xl font-bold mb-3">Need Custom Solution?</h3>
+            <p class="text-white/90 mb-4">Let's discuss your unique requirements</p>
+            <button data-nav-contact class="bg-white text-teal-700 px-6 py-2 rounded-full font-semibold hover:shadow-lg transition">Contact Now</button>
+          </div>
+        </div>
+      </div>
+    `,
+
+      about: `
+      <div class="container mx-auto px-4 py-20">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">About PPMANI</h2>
+            <div class="w-24 h-1 bg-teal-500 mx-auto rounded-full"></div>
+          </div>
+          <div class="flex flex-col lg:flex-row gap-12 items-center">
+            <div class="lg:w-1/2">
+              <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500&h=500&fit=crop" alt="Freelance Web Developer" class="rounded-3xl shadow-2xl w-full object-cover">
+            </div>
+            <div class="lg:w-1/2 space-y-6">
+              <div class="inline-block bg-teal-100 rounded-full px-4 py-1 text-teal-700 font-semibold">Freelance Expert</div>
+              <h3 class="text-3xl font-bold">Hi, I'm PPMANI — Web Developer</h3>
+              <p class="text-gray-600 text-lg">I help businesses and startups launch high-performance websites with beautiful, clean UI and fast delivery. My focus: client satisfaction, pixel-perfect execution, and making the web work for your goals.</p>
+              <div class="space-y-3">
+                <div class="flex items-center space-x-3"><i class="fas fa-check-circle text-teal-500 text-xl"></i><span>✅ Fast delivery (48h for business sites)</span></div>
+                <div class="flex items-center space-x-3"><i class="fas fa-check-circle text-teal-500 text-xl"></i><span>✅ Affordable packages, premium quality</span></div>
+                <div class="flex items-center space-x-3"><i class="fas fa-check-circle text-teal-500 text-xl"></i><span>✅ 100% responsive & SEO friendly</span></div>
+              </div>
+              <button data-nav-contact class="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-3 rounded-full transition-all shadow-lg mt-4">Let's build something great →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+
+      contact: `
+      <div class="container mx-auto px-4 py-20">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Let's Talk About Your Project</h2>
+            <p class="text-gray-600 text-lg">Have a project in mind? I'd love to hear about it.</p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-12">
+            <div class="bg-white rounded-3xl shadow-xl p-8">
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=500&h=300&fit=crop" alt="Contact" class="rounded-2xl mb-6 w-full h-48 object-cover">
+              <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
+              <div class="space-y-4">
+                <div class="flex items-center space-x-3"><i class="fab fa-whatsapp text-green-500 text-2xl"></i><span>+91 98447 30773 (WhatsApp)</span></div>
+                <div class="flex items-center space-x-3"><i class="fas fa-envelope text-teal-500 text-2xl"></i><span>contact.ppmani@gmail.com</span></div>
+                <div class="flex items-center space-x-3"><i class="fas fa-clock text-teal-500 text-2xl"></i><span>Response within 2 hours</span></div>
+              </div>
+              <div class="mt-8">
+                <p class="font-semibold mb-3">Follow me on social:</p>
+                <div class="flex space-x-4">
+                  <a href="https://www.facebook.com/61578386049057/about/?_rdr" target="_blank" class="bg-gray-100 hover:bg-blue-600 hover:text-white p-3 rounded-full transition-all"><i class="fab fa-facebook-f text-xl"></i></a>
+                  <a href="https://www.youtube.com/channel/UCY2r47u-rhEiLz3Imnw7MAg" target="_blank" class="bg-gray-100 hover:bg-red-600 hover:text-white p-3 rounded-full transition-all"><i class="fab fa-youtube text-xl"></i></a>
+                  <a href="https://wa.me/919844730773" target="_blank" class="bg-gray-100 hover:bg-green-500 hover:text-white p-3 rounded-full transition-all"><i class="fab fa-whatsapp text-xl"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-3xl shadow-xl p-8">
+              
+              <form
+                  action="https://formspree.io/f/xvzvlbdj"
+                  method="POST"
+                  id="contactForm"
+                  target="_blank"
+                  class="space-y-6">
+                <div>
+                  <label class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                  <input               
+                    type="text" 
+                    id="fullname" 
+                    name="fullname"
+                    required
+                    minlength="3"
+                    pattern="[A-Za-z ]+"
+                    oninvalid="this.setCustomValidity('Enter at least 3 letters (only alphabets)')"
+                    oninput="this.setCustomValidity('')"
+                    placeholder="Enter your name" 
+                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                </div>
+               
+                <div>
+                  <label class="block text-gray-700 font-semibold mb-2">Email Address</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email"
+                    required 
+                    placeholder="Enter email"
+                    oninvalid="this.setCustomValidity('Enter a valid email (example: abc@gmail.com)')"
+                    oninput="this.setCustomValidity('')"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500">
+                </div>
+                <div>
+                  <label class="block text-gray-700 font-semibold mb-2">Project Requirements</label>
+                  <textarea 
+                    id="project" 
+                    rows="4" 
+                    name="message"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500">
+                  </textarea>
+                </div>
+                <button id="submitbtn" type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-xl transition-all shadow-md">
+                  <span id="btnText">Send Message →</span>
+                   <span
+                    id="spinner"
+                    class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin">
+                  </span>                 
+                </button>
+                
+              </form>
+              <div id="status"></div>
+              <p id="wassapptext" class="text-center text-sm text-gray-500 mt-4"><i class="fab fa-whatsapp"></i> Or chat instantly via WhatsApp button (bottom right)</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    };
+
+
+
+    let currentPage = "home";
+
+    function renderPage(pageId) {
+      if (!pages[pageId]) pageId = "home";
+
+      currentPage = pageId;
+      document.getElementById("app").innerHTML = pages[pageId];
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+
+
+      if (pageId === "contact") {
+
+        attachFormHandler();
+      }
+    }
+
+    function attachFormHandler() {
+      const form = document.getElementById('contactForm');
+      const statusDiv = document.getElementById('status');
+
+        const btnText = document.getElementById('btnText');
+        const spinner = document.getElementById('spinner');
+        const button = document.getElementById('submitbtn');
+        const wassappText = document.getElementById('wassapptext');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        spinner.classList.remove('hidden');
+        btnText.classList.add('hidden');
+        button.disabled = true;
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: formData
+          });
+
+          if (res.ok) {
+            statusDiv.textContent = "✅ Message sent!";
+            statusDiv.className = "text-green-600 font-semibold text-center mt-4";
+            form.reset();
+          } else {
+            statusDiv.textContent = "❌ Error sending message.";
+            statusDiv.className = "text-red-600 font-semibold text-center mt-4";
+          }
+        } catch (err) {
+          statusDiv.textContent = "❌ Error sending message.";
+          statusDiv.className = "text-red-600 font-semibold text-center mt-4";
+          console.error(err);
+        }
+
+        spinner.classList.add('hidden');
+        btnText.classList.remove('hidden');
+        wassappText.classList.add('hidden')
+        button.disabled = false;
+      });
+    }
+
+    // Re-attach consultation buttons
+    document.querySelectorAll("[data-nav-contact]").forEach((el) => {
+      el.addEventListener("click", () => navigateTo("contact"));
+    });
+
+
+    function setActiveNav(pageId) {
+      document
+        .querySelectorAll(".nav-link, .nav-link-mobile")
+        .forEach((link) => {
+          if (link.getAttribute("data-page") === pageId) {
+            link.classList.add("text-teal-600", "font-bold");
+            link.classList.remove("text-gray-700");
+          } else {
+            link.classList.remove("text-teal-600", "font-bold");
+            link.classList.add("text-gray-700");
+          }
+        });
+    }
+
+    function navigateTo(page) {
+      history.pushState({ page }, "", `#${page}`);
+      renderPage(page);
+    }
+
+    function handleHash() {
+      let hash = window.location.hash.slice(1);
+      if (hash && pages[hash]) renderPage(hash);
+      else renderPage("home");
+    }
+
+    // Event listeners
+    window.addEventListener("popstate", handleHash);
+
+    document
+      .querySelectorAll(".nav-link, .nav-link-mobile")
+      .forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const page = link.getAttribute("data-page");
+          if (page) navigateTo(page);
+          document.getElementById("mobileMenu")?.classList.add("hidden");
+        });
+      });
+
+    document.getElementById("menuToggle")?.addEventListener("click", () => {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("hidden");
+    });
+
+    // Global click for consultation buttons
+    document.addEventListener("click", (e) => {
+      if (e.target.closest("[data-nav-contact]")) {
+        e.preventDefault();
+        navigateTo("contact");
+      }
+    });
+
+    handleHash();
+  </script>
+</body>
+
+</html>
