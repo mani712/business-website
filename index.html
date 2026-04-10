@@ -10,8 +10,14 @@
   <meta name="description"
     content="PPMANI – Freelance website developer. Get your business online in 48 hours. Professional websites, landing pages, SaaS dashboards, redesign & performance optimization." />
   <meta name="keywords"
-    content="website developer near me, freelance web developer India, business website, landing pages, SaaS dashboard UI, performance optimization" />
+    content="website developer near me, freelance web developer India, business website, landing pages, responsive website design, performance optimization, hire web developer" />
   <meta name="author" content="PPMANI" />
+
+  <!-- Open Graph (for sharing) -->
+  <meta property="og:title" content="Freelance Web Developer | Modern Website Design" />
+  <meta property="og:description" content="Build fast, responsive, and SEO-friendly websites for your business." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ppmani.netlify.app/" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -131,7 +137,7 @@
       <p class="text-lg font-semibold text-white mb-2">PPMANI</p>
       <p>
         © 2025 PPMANI — Freelance Web Developer. Fast, modern &
-        conversion-focused.
+        conversion-focused | Website Development Services.
       </p>
       <p class="text-sm mt-2">📍 India | Worldwide clients</p>
       <div class="flex justify-center space-x-6 mt-6">
@@ -159,7 +165,6 @@
 
   <script>
     // Image-based content with attractive pictures (Unsplash placeholder but high quality)
-    const YOUR_FORM_ID = '1FAIpQLSdJ9N0zRKDRlA8BqGC3T7eD4aZ0TXH3Aw1KLrzqYEkKoElByA'
     const pages = {
       home: `
       <!-- Hero Section with Image -->
@@ -446,6 +451,25 @@
     `,
     };
 
+    const seoConfig = {
+      home: {
+        title: "Freelance Web Developer in India | Website Development Services",
+        description: "Freelance web developer offering responsive, fast, and SEO-friendly website development services for businesses."
+      },
+      about: {
+        title: "About | Freelance Web Developer",
+        description: "Experienced freelance web developer specializing in modern, responsive and user-friendly websites."
+      },
+      services: {
+        title: "Web Development Services | Hire Web Developer",
+        description: "Custom website development, responsive design, and SEO-friendly solutions for your business."
+      },
+      contact: {
+        title: "Contact | Hire Web Developer",
+        description: "Get in touch to hire a freelance web developer and build your website today."
+      }
+    };
+
 
 
     let currentPage = "home";
@@ -454,6 +478,9 @@
       if (!pages[pageId]) pageId = "home";
 
       currentPage = pageId;
+
+      updateSEO(pageId);
+
       document.getElementById("app").innerHTML = pages[pageId];
 
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -466,14 +493,29 @@
       }
     }
 
+    function updateSEO(page) {
+      const seo = seoConfig[page] || seoConfig.home;
+
+      document.title = seo.title;
+
+      let metaDesc = document.querySelector("meta[name='description']");
+      if (!metaDesc) {
+        metaDesc = document.createElement("meta");
+        metaDesc.setAttribute("name", "description");
+        document.head.appendChild(metaDesc);
+      }
+
+      metaDesc.setAttribute("content", seo.description);
+    }
+
     function attachFormHandler() {
       const form = document.getElementById('contactForm');
       const statusDiv = document.getElementById('status');
 
-        const btnText = document.getElementById('btnText');
-        const spinner = document.getElementById('spinner');
-        const button = document.getElementById('submitbtn');
-        const wassappText = document.getElementById('wassapptext');
+      const btnText = document.getElementById('btnText');
+      const spinner = document.getElementById('spinner');
+      const button = document.getElementById('submitbtn');
+      const wassappText = document.getElementById('wassapptext');
 
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -534,18 +576,23 @@
     }
 
     function navigateTo(page) {
-      history.pushState({ page }, "", `#${page}`);
+      const path = page === "home" ? "/" : `/${page}`;
+      history.pushState({ page }, "", path);
       renderPage(page);
     }
 
-    function handleHash() {
-      let hash = window.location.hash.slice(1);
-      if (hash && pages[hash]) renderPage(hash);
-      else renderPage("home");
+    function handleRoute() {
+      let path = window.location.pathname;
+
+      let page = path === "/" ? "home" : path.replace("/", "");
+
+      if (!pages[page]) page = "home";
+
+      renderPage(page);
     }
 
     // Event listeners
-    window.addEventListener("popstate", handleHash);
+    window.addEventListener("popstate", handleRoute);
 
     document
       .querySelectorAll(".nav-link, .nav-link-mobile")
@@ -571,7 +618,7 @@
       }
     });
 
-    handleHash();
+    handleRoute();
   </script>
 </body>
 
