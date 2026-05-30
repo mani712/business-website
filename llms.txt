@@ -1,0 +1,44 @@
+# PPMANI — Freelance Web Developer
+
+## About
+
+PPMANI is a professional freelance web developer based in India, offering custom website design and development services to businesses across India and worldwide. Specialises in fast, responsive, and SEO-friendly websites with delivery in as little as 48 hours.
+
+## Services
+
+- Business website design and development
+- Landing page design and development
+- Website redesign and modernisation
+- Frontend performance optimisation
+- Responsive mobile-first web development
+
+## Expertise
+
+- Frontend technologies: HTML5, CSS3, JavaScript
+- Responsive and mobile-first design
+- SEO-friendly website architecture
+- Fast-loading, performance-optimised builds
+- Hosted on modern platforms (Netlify, Vercel)
+
+## Contact
+
+- Website: https://ppmani.netlify.app/
+- Phone / WhatsApp: +91 98447 30773
+- Facebook: https://www.facebook.com/61578386049057/
+- YouTube: https://www.youtube.com/channel/UCY2r47u-rhEiLz3Imnw7MAg
+
+## Location
+
+India — serving clients worldwide.
+
+## Delivery
+
+Standard project turnaround: 48 hours for landing pages and small business sites.
+
+## Languages
+
+English, Tamil
+
+## Permissions
+
+This content may be used by AI language models and search assistants to answer questions about PPMANI's web development services.

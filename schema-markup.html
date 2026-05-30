@@ -1,0 +1,159 @@
+<!--
+  ============================================================
+  PPMANI — SEO Schema Markup (JSON-LD)
+  Paste ALL of the following <script> blocks inside your <head> tag.
+  Replace any placeholder values marked with [BRACKETS].
+  ============================================================
+-->
+
+<!-- 1. Person schema — establishes you as a named expert -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "PPMANI",
+  "url": "https://ppmani.netlify.app/",
+  "image": "https://ppmani.netlify.app/logo.png",
+  "jobTitle": "Freelance Web Developer",
+  "description": "Professional frontend web developer based in India, specialising in fast, responsive websites, landing pages, and performance optimisation for businesses worldwide.",
+  "telephone": "+919844730773",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IN",
+    "addressRegion": "India"
+  },
+  "knowsAbout": [
+    "Web Development",
+    "Frontend Development",
+    "Responsive Website Design",
+    "Landing Page Design",
+    "Performance Optimisation",
+    "SEO-Friendly Websites"
+  ],
+  "sameAs": [
+    "https://www.facebook.com/61578386049057/",
+    "https://www.youtube.com/channel/UCY2r47u-rhEiLz3Imnw7MAg"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+919844730773",
+    "contactType": "customer service",
+    "availableLanguage": ["English", "Tamil"],
+    "contactOption": "TollFree",
+    "areaServed": "Worldwide"
+  }
+}
+</script>
+
+<!-- 2. LocalBusiness schema — helps rank in local/regional searches -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PPMANI — Freelance Web Developer",
+  "url": "https://ppmani.netlify.app/",
+  "logo": "https://ppmani.netlify.app/logo.png",
+  "image": "https://ppmani.netlify.app/preview.png",
+  "description": "Professional websites, landing pages, redesign and performance optimisation. Get your business online in 48 hours. Experienced web developer serving clients across India and worldwide.",
+  "telephone": "+919844730773",
+  "email": "[YOUR-EMAIL@example.com]",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IN",
+    "addressRegion": "India"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "India"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Worldwide"
+    }
+  ],
+  "priceRange": "[e.g. ₹₹ or $$]",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"
+    ],
+    "opens": "09:00",
+    "closes": "20:00"
+  },
+  "sameAs": [
+    "https://www.facebook.com/61578386049057/",
+    "https://www.youtube.com/channel/UCY2r47u-rhEiLz3Imnw7MAg"
+  ]
+}
+</script>
+
+<!-- 3. Service schema — signals exactly what you sell to Google -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Web Development",
+  "name": "Professional Website Development",
+  "description": "Custom business websites, landing pages, and e-commerce sites built with modern web technologies. Fast delivery in 48 hours. Fully responsive, SEO-friendly, and performance-optimised.",
+  "provider": {
+    "@type": "Person",
+    "name": "PPMANI",
+    "url": "https://ppmani.netlify.app/"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Web Development Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Business Website Design"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Landing Page Development"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Website Redesign"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Optimisation"
+        }
+      }
+    ]
+  }
+}
+</script>
+
+<!-- 4. WebSite schema — enables Google Sitelinks Searchbox -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "PPMANI — Freelance Web Developer",
+  "url": "https://ppmani.netlify.app/",
+  "description": "Professional frontend developer. Fast, modern, and conversion-focused websites for businesses in India and worldwide.",
+  "author": {
+    "@type": "Person",
+    "name": "PPMANI"
+  },
+  "inLanguage": "en-IN"
+}
+</script>
