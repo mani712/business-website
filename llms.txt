@@ -1,4 +1,4 @@
-# Website: https://ppmani.netlify.app/
+# Website: https://webdev.ppmani.com/
 
 # PPMANI — Freelance Web Developer
 
